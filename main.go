@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// Initialize logging
-	programLevel.Set(slog.LevelDebug)
+	programLevel.Set(slog.LevelInfo)
 	slog.SetDefault(slog.New(slog.NewTextHandler(os.Stderr, &slog.HandlerOptions{Level: programLevel})))
 
 	// Initialize emulator
