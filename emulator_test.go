@@ -9,7 +9,7 @@ import "github.com/stretchr/testify/assert"
 
 func Test_EmulatorLoadFont(t *testing.T) {
 	// Given
-	emulator, err := NewEmulator()
+	emulator, err := NewEmulator(NewTerminalDisplay())
 	assert.NoError(t, err)
 
 	// Then
@@ -23,7 +23,7 @@ func Test_EmulatorLoadRom(t *testing.T) {
 	data, err := io.ReadAll(fh)
 	assert.NoError(t, err)
 
-	emulator, err := NewEmulator()
+	emulator, err := NewEmulator(NewTerminalDisplay())
 	assert.NoError(t, err)
 
 	// Test

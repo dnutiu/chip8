@@ -12,7 +12,7 @@ func main() {
 	slog.SetDefault(slog.New(slog.NewTextHandler(os.Stderr, &slog.HandlerOptions{Level: programLevel})))
 
 	// Initialize emulator
-	emulator, err := NewEmulator()
+	emulator, err := NewEmulator(NewTerminalDisplay())
 	if err != nil {
 		slog.Error(fmt.Sprintf("Failed to instantiate emulator instance %v", err))
 		os.Exit(1)

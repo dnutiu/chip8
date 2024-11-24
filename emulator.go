@@ -47,14 +47,16 @@ type Emulator struct {
 	soundTimer uint8
 	// The stackPointer register.
 	stackPointer uint8
+	// display held a Display instance.
+	display Display
 }
 
 // NewEmulator creates a new emulator instance.
-func NewEmulator() (*Emulator, error) {
+func NewEmulator(display Display) (*Emulator, error) {
 	var emulator = &Emulator{
-		memory:         [MemorySize]uint8{},
-		registers:      [RegistersSize]uint8{},
-		programCounter: 0,
+		memory:    [MemorySize]uint8{},
+		registers: [RegistersSize]uint8{},
+		display:   display,
 	}
 
 	emulator.loadFontData()
